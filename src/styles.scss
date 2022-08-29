@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gd-primary {
+    background: linear-gradient(152.3deg, #000000 -37.49%, #96146A 88.51%);
+}
+.gd-primary-text {
+    background: linear-gradient(152.3deg, #000000 -37.49%, #96146A 88.51%);
+-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

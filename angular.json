@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "cd9eee92-4f90-46ac-93f0-3f5b52a9ea97"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -33,7 +36,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@popperjs/core/dist/umd/popper.js",
+              "node_modules/flowbite/dist/flowbite.js"
+            ]
           },
           "configurations": {
             "production": {
