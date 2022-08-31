@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { CaraouselComponent } from './home/caraousel/caraousel.component';
 import { SliderComponent } from './home/slider/slider.component';
+import { CardsComponent } from './home/cards/cards.component';
 
 
 
@@ -17,6 +18,7 @@ import { SliderComponent } from './home/slider/slider.component';
     CategoriesComponent,
     CaraouselComponent,
     SliderComponent,
+    CardsComponent,
   ],
   exports: [
     NavbarComponent,
@@ -24,6 +26,7 @@ import { SliderComponent } from './home/slider/slider.component';
     CategoriesComponent,
     CaraouselComponent,
     SliderComponent,
+    CardsComponent,
 ],
   imports: [
     CommonModule,
