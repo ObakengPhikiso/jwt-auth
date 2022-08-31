@@ -11,3 +11,18 @@
 -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+
+a.card-title.active {
+    background-image: url('./assets/underline.svg');
+    background-position: 50% 1.4rem;
+    background-size: 46px 20px;
+    background-repeat: no-repeat;
+}
+
+.ng-valid[required], .ng-valid.required {
+    border-left: 10px solid #42A948
+}
+
+.ng-invalid:not(form) {
+    border-left: 10px solid #a94442
+}

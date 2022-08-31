@@ -34,16 +34,17 @@
                         <div class="z-50 card w-96 bg-base-100 shadow-xl" #popoverDropdownRef>
                             <div class="bg-white text-base z-50 float-bottom py-2 list-none text-left rounded shadow-lg mt-1"
                                 [ngClass]="dropdownPopoverShow ? 'block' : 'hidden'">
+                                <p class="text-center">Welcome to Songapp</p>
                                 <div class="grid grid-cols-2 gap-2 p-4">
-                                    <a [routerLink]="'/auth/register'"
-                                        class="btn gd-primary text-white btn-sm">Register</a>
+                                    <a [routerLink]="'/auth/signup'" class="btn gd-primary text-white btn-sm">Sign
+                                        up</a>
                                     <a [routerLink]="'/auth/signin'"
                                         class="btn gd-primary-text btn-accent btn-sm">Signin</a>
                                 </div>
-                                <a href="#pablo"
+                                <!-- <a href="#pablo"
                                     class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent  text-slate-700">
                                     Action
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                     </div>
@@ -56,10 +57,9 @@
 
 <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-neutral shadow-lg mb-3">
     <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
-        <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center w-100">
+        <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}"
+            class="lg:flex lg:flex-grow items-center w-100 grid grid-cols-3 gap-2">
             <form class="w-full">
-                <label for="search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Your
-                    Email</label>
                 <div class="relative">
                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                         <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none"
@@ -68,11 +68,19 @@
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
-                    <input type="search" id="search"
+                    <input type="text" id="search"
                         class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Search" required="">
+                        placeholder="Search">
                 </div>
             </form>
+            <a href="#">
+                <i class="far fa-heart text-3xl leading-lg  gd-primary-text pr-3 pl-3" aria-hidden="true"></i>
+                <!-- <i class="fa fa-heart text-3xl leading-lg  gd-primary-text pr-3 pl-3" aria-hidden="true"></i> -->
+            </a>
+            <a href="#">
+                <i class="fa fa-cart-plus text-3xl leading-lg  gd-primary-text" aria-hidden="true"></i>
+            </a>
+
 
         </div>
     </div>
