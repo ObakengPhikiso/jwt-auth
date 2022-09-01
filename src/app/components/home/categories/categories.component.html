@@ -3,15 +3,15 @@
       <h2 class="card-title justify-center">Categories</h2>
       <div class="flex flex-row gap-0">
 
-        <div *ngIf="categories; else nothing">
-            <div *ngFor="let category of categories">
-               <a >{{category.name}}</a> 
-            </div>
+      <div *ngIf="categories; else nothing">
+        <div *ngFor="let category of categories">
+          <a>{{category.name}}</a>
         </div>
-
-        <ng-template #nothing>
-            <p>Nothing yet</p>
-        </ng-template>
       </div>
+
+      <ng-template #nothing>
+        <p>Loading...</p>
+      </ng-template>
     </div>
   </div>
+</div>

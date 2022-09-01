@@ -37,8 +37,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/@popperjs/core/dist/umd/popper.js",
-              "node_modules/flowbite/dist/flowbite.js"
+              "node_modules/flowbite/dist/flowbite.js",
+              "node_modules/@popperjs/core/dist/umd/popper.js"
             ]
           },
           "configurations": {
