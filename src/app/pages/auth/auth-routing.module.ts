@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'signin', component: SigninComponent, pathMatch: 'full'},
   {path: 'signup', component: RegisterComponent, pathMatch: 'full'},
   {path: 'forgot-password', component: ForgotPasswordComponent, pathMatch: 'full'},
-  {path: 'reset-password/:key', component: ResetPasswordComponent, pathMatch: 'full'},
+  {path: 'reset/finish', component: ResetPasswordComponent, pathMatch: 'full'},
   {path: '**', redirectTo: 'signin', pathMatch: 'full'},
 ];
 

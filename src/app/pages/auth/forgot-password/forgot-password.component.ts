@@ -22,8 +22,8 @@ form: any;
   get f() {
     return this.form.controls;
   }
-  reset(email: string): void {
-    this.authService.forgotPassword(email).subscribe(() => {
+  reset(): void {
+    this.authService.forgotPassword(this.form.value.mail).subscribe(() => {
       this.router.navigateByUrl('/auth')
     }, (err:any) => {
       console.log(err);

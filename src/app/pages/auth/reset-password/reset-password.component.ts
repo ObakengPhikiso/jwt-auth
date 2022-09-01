@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomvalidatorService } from 'src/app/helpers/customvalidator.service';
 import { ResetPass } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
@@ -13,11 +13,17 @@ import { AuthService } from 'src/app/services/auth.service';
 export class ResetPasswordComponent implements OnInit {
 showPassword: boolean = false;
 form: any;
-  constructor(private router: Router, private authService: AuthService) { }
+key: string = '';
+
+  constructor(private router: Router, private authService: AuthService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((param: any) => {
+     this.key = param.key;
+    })
+    
     this.form = new FormGroup({
-    key: new FormControl('', [Validators.required]),
+    key: new FormControl(this.key, [Validators.required]),
     newPassword: new FormControl('', [Validators.required]),
     confirm_password: new FormControl('', [Validators.required]),
   }, [CustomvalidatorService.MatchValidator('newPassword','confirm_password')]);

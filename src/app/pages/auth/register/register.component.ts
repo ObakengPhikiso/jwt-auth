@@ -28,12 +28,12 @@ export class RegisterComponent implements OnInit {
 
   signup(): void {
     let user: Signup = {
-      role: 'Customer',
+      roles: 'customer',
       user: {
         email: this.form.value.email, 
         password: this.form.value.password,
-        firstname: this.form.value.firstname,
-        lastname: this.form.value.lastname,
+        firstName: this.form.value.firstname,
+        lastName: this.form.value.lastname,
       }
     };
         

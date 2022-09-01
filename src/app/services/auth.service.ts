@@ -16,7 +16,7 @@ export class AuthService {
   userDetails: any;
 
   get token(): any {
-    return sessionStorage.getItem('token');
+    return sessionStorage.getItem(this.TOKEN_NAME);
   }
 
   get currUser(): any | null {
@@ -27,7 +27,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) {
     this._isLoggedIn$.next(!!this.token);
-    this.userToken = this.getUserToken(this.token);
+    this.userToken = this.getUserToken(this.token);    
     this.userDetails = this.getUser(this.currUser);
    }
 
@@ -40,9 +40,10 @@ export class AuthService {
       tap((response: any) => {
         this._isLoggedIn$.next(true);
         sessionStorage.setItem(this.TOKEN_NAME, response.id_token);
-        const user = this.getAccount(response.id_token);
-        sessionStorage.setItem('user',user);
-        this.userDetails = user as User;
+        this.getAccount(response.id_token).subscribe((res: any) => {
+        sessionStorage.setItem('user',JSON.stringify(res));
+        this.userDetails = res as User;
+        })  
       })
     )
    }
@@ -62,7 +63,7 @@ export class AuthService {
    }
 
    forgotPassword(email: string) {
-    return this.http.post(environment.forgotPassword, {mail: email}).pipe(tap((response: any) =>response));
+    return this.http.post(environment.forgotPassword, email).pipe(tap((response: any) =>response));
    }
 
    resetPassword(form: ResetPass) {
@@ -70,14 +71,13 @@ export class AuthService {
    }
 
    getAccount(token: string) {
-    const user: any = this.http.get(environment.account,{headers: {'authorization': 'Bearer ' + token}}).subscribe((res: any) => res)
-    return user;
+    return this.http.get(environment.account,{headers: {'authorization': 'Bearer ' + token}})
    }
 
    private getUserToken(token: string): User | null {
     if(!token) {
       return null;
-    }
+    }    
     return JSON.parse(atob(token.split('.')[1])) as User
    }
 

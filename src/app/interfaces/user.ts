@@ -1,7 +1,7 @@
 export interface User {
         email: string;
-        firstname: string;
-        lastname: string;
+        firstName: string;
+        lastName: string;
 }
 export interface Signin {
     username: string;
@@ -10,11 +10,11 @@ export interface Signin {
 }
 
 export interface Signup {
-    role: string;
+    roles: string;
     user: {
         email: string;
-        firstname: string;
-        lastname: string;
+        firstName: string;
+        lastName: string;
         password: string;
     }
 }
