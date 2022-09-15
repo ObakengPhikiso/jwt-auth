@@ -13,7 +13,7 @@ export class CategoriesComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.getData().subscribe((res:any)=> {
+    this.apiService.getCategories().subscribe((res:any)=> {
       this.categories = res;
     })
   }

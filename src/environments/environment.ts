@@ -8,5 +8,6 @@ export const environment = {
   forgotPassword: baseUrl + '/api/account/reset-password/init',
   resetPassword: baseUrl + '/api/account/reset-password/finish',
   categories: baseUrl + '/api/categories',
+  productCategories: baseUrl + '/api/product-categories'
 };
 

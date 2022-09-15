@@ -9,7 +9,13 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  getData(){
+  getCategories(){
     return this.http.get(environment.categories);
   }
+
+  getProductCategories(){
+    return this.http.get(environment.productCategories)
+  }
+
+
 }

@@ -1,36 +1,17 @@
-<div class="carousel h-30">
-  <div id="slide1" class="carousel-item relative w-full">
-    <img src="https://i.pinimg.com/474x/31/f7/05/31f705358e77781e47b9c868401573e1.jpg" class="w-full" />
-    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide4" class="btn btn-circle">❮</a>
-      <a href="#slide2" class="btn btn-circle">❯</a>
+<div *ngIf="images && images.length>0" class="carousel-container">
+    <img *ngFor="let image of images; let i = index" [src]="image.img" [alt]="image.alt"
+        [ngClass]="{'image-active': selectedIndex === i}" class="fade">
+
+    <div *ngIf="indicators" class="carousel-dot-container">
+        <span *ngFor="let dot of images; let i = index" class="dot" [ngClass]="{'active': selectedIndex === i}"
+            (click)="selectImage(i)">
+        </span>
     </div>
-  </div>
-  <div id="slide2" class="carousel-item relative w-full">
-    <img src="https://i.pinimg.com/474x/44/71/51/44715139e9d782f0e40b2d99714dc327.jpg" class="w-full" />
-    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide1" class="btn btn-circle">❮</a>
-      <a href="#slide3" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide3" class="carousel-item relative w-full">
-    <img src="https://i.pinimg.com/474x/ce/fc/59/cefc59a1b9f928ac8870e7335ec92923.jpg" class="w-full" />
-    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide2" class="btn btn-circle">❮</a>
-      <a href="#slide4" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide4" class="carousel-item relative w-full">
-    <img src="https://i.pinimg.com/474x/55/37/34/553734670e1387e51dd66e82020be410.jpg" class="w-full" />
-    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide3" class="btn btn-circle">❮</a>
-      <a href="#slide1" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
-<div class="flex justify-center w-full py-2 gap-2">
-  <a href="#slide1" class="btn btn-xs">o</a>
-  <a href="#slide2" class="btn btn-xs">0</a>
-  <a href="#slide3" class="btn btn-xs">0</a>
-  <a href="#slide4" class="btn btn-xs">0</a>
+
+    <button *ngIf="controls" class="btn-carousel btn-prev">
+        <i class="fas fa-arrow-circle-left icon-carousel icon-prev" (click)="onPrevClick()"></i>
+    </button>
+    <button *ngIf="controls" class="btn-carousel btn-next">
+        <i class="fas fa-arrow-circle-right icon-carousel icon-next" (click)="onNextClick()"></i>
+    </button>
 </div>

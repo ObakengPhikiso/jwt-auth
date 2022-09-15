@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-cards',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  section_A:boolean = true
-  
-  constructor() { }
+  section_A: boolean = true
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.apiService.getProductCategories().subscribe((data: any) => {
+      console.log(data);
+    })
   }
 
 }
