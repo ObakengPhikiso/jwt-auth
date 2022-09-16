@@ -8,6 +8,7 @@ import { CategoriesComponent } from './home/categories/categories.component';
 import { CaraouselComponent } from './home/caraousel/caraousel.component';
 import { SliderComponent } from './home/slider/slider.component';
 import { CardsComponent } from './home/cards/cards.component';
+import { FlashSalesComponent } from './home/flash-sales/flash-sales.component';
 
 
 
@@ -20,6 +21,7 @@ import { CardsComponent } from './home/cards/cards.component';
     CaraouselComponent,
     SliderComponent,
     CardsComponent,
+    FlashSalesComponent,
   ],
   exports: [
     NavbarComponent,
@@ -28,6 +30,7 @@ import { CardsComponent } from './home/cards/cards.component';
     CaraouselComponent,
     SliderComponent,
     CardsComponent,
+    FlashSalesComponent,
 ],
   imports: [
     CommonModule,

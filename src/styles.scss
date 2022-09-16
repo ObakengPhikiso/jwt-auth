@@ -4,30 +4,34 @@
 @tailwind utilities;
 
 .gd-primary {
-    background: linear-gradient(152.3deg, #000000 -37.49%, #96146A 88.51%);
+  background: linear-gradient(152.3deg, #000000 -37.49%, #96146a 88.51%);
 }
 .gd-primary-text {
-    background: linear-gradient(152.3deg, #000000 -37.49%, #96146A 88.51%);
--webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  background: linear-gradient(152.3deg, #000000 -37.49%, #96146a 88.51%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .gd-primary-slide {
-background: linear-gradient(99.56deg, #F39200 -4.69%, #96146A 110.68%);
-
+  background: linear-gradient(99.56deg, #f39200 -4.69%, #96146a 110.68%);
 }
 
+:root{
+    // Colors we gonna use out through the application
+    --mustard: orange;
+}
 
 a.card-title.active {
-    background-image: url('./assets/underline.svg');
-    background-position: 50% 1.4rem;
-    background-size: 46px 20px;
-    background-repeat: no-repeat;
+  background-image: url("./assets/underline.svg");
+  background-position: 50% 1.4rem;
+  background-size: 46px 20px;
+  background-repeat: no-repeat;
 }
 
-.ng-valid[required], .ng-valid.required {
-    border-left: 10px solid #42A948
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 10px solid #42a948;
 }
 
 .ng-invalid:not(form) {
-    border-left: 10px solid #a94442
+  border-left: 10px solid #a94442;
 }

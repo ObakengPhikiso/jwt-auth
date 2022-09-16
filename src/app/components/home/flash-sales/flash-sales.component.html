@@ -1,0 +1,15 @@
+<div class="mt-20">
+    <div class="flex flex-row justify-between items-center ">
+       <div class="text-5xl font-semibold">Flash sales</div>
+       <div></div>
+       <div class="text-xl font-medium cursor-pointer">View all ></div>
+    </div>
+    <!--Slider-->
+    <div class="carousel carousel-center body h-96 space-x-10 mt-16">
+        <div *ngFor="let card of [1,1,1,1,1,1,1]">
+          <div class="carousel-item">
+            <app-cards [section]="'flashSales'"></app-cards>
+          </div>
+        </div>
+      </div>
+</div>

@@ -1,18 +1,32 @@
 <div class="card card-compact w-56 h-auto bg-base-100 shadow-xl">
-  <figure><img class="rounded-b-3xl h-60" src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-  <div class="card-body">
-    <div *ngIf="section_A; else other">
-      <h2 class="card-title">$11</h2>
-      <p>If a dog chews shoes ?</p>
-    </div>
 
-    <ng-template #other>
-      <h2 class="card-title">Shoes!</h2>
-      <p>If a dog chews shoes whose shoes does he choose?</p>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">Buy Now</button>
+  <div *ngIf="section === 'slider'">
+    <figure>
+      <img class="rounded-b-3xl h-52" src="https://placeimg.com/400/225/arch" alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <div class="text-center" *ngIf="section === 'slider' ">
+        <h2 class="text-2xl font-bold">$11.99</h2>
+        <p class="text-lg line-through text-gray-500">$233</p>
       </div>
-    </ng-template>
-    
+    </div>
   </div>
+
+  <div *ngIf="section === 'flashSales'">
+    <figure>
+      <div class="discount flex flex-row rounded-br-[22px] justify-center items-center text-xl font-medium">-50%</div>
+      <img class="rounded-b-3xl h-52" src="https://placeimg.com/400/225/arch" alt="Shoes" />
+    </figure>
+    <div class="card-body text-center">
+      <div class="flex flex-row justify-between">
+        <p class="text-lg line-through text-gray-500">$23.99</p>
+      <p class="text-2xl font-bold">$11.99</p>
+      </div>
+      <p class="font-semibold">500 sold</p>
+    </div>
+  </div>
+
+  <div *ngIf="section === 'tabs'">
+  </div>
+
 </div>

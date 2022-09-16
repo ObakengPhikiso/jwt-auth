@@ -2,10 +2,10 @@
   <div class="ml-6 text-2xl font-semibold text-white">
     TOP SELLING ITEMS
   </div>
-  <div class="carousel carousel-center body h-96 p-4 space-x-4">
+  <div class="carousel carousel-center body h-96 p-8 space-x-4">
   <div *ngFor="let card of [1,1,1,1,1]">
     <div class="carousel-item">
-      <app-cards></app-cards>
+      <app-cards [section]="'slider'"></app-cards>
     </div>
   </div>
 </div>

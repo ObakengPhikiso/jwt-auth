@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SliderComponent implements OnInit {
 
+  section: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.section = "slider"
   }
 
 }
